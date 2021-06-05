@@ -1,0 +1,142 @@
+@import '../../variables.scss';
+
+nav {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  user-select: none;
+
+  .logo {
+    display: block;
+    cursor: pointer;
+    font-size: $font-size-heading;
+  }
+
+  .nav-list {
+    display: flex;
+    list-style: none;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .nav-item {
+      margin: 10px 20px;
+      cursor: pointer;
+    }
+  }
+
+  .always-top {
+    margin: 10px 20px;
+
+    &.theme-toggle {
+      padding-top: 5px;
+    }
+  }
+
+  .always-top.theme-toggle {
+    .theme-switch {
+      transform: rotate(0deg) scale(1);
+      transition: transform 500ms;
+    }
+
+    .theme-switch:hover {
+      transform: rotate(30deg) scale(1.1);
+    }
+  }
+
+  .nav-toggle.menu , .nav-toggle.cross {
+    display: none;
+  }
+}
+
+nav.collapsed {
+  height: 100vh;
+  transition: height 2s ease-in-out;
+  transition-delay: 1s;
+
+  .nav-list {
+    display: flex;
+    .nav-item{
+      transform: scale(1);
+      transition: transform 500ms ease-in-out;
+      transition-delay: 1s;
+    }
+  }
+
+  .nav-toggle.menu{
+    display: none;
+  }
+
+  .nav-toggle.cross{
+    display: block !important;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    transform: scale(1);
+    transition: transform 500ms;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    position: relative;
+    height: 75px;
+    transition: height 700ms ease-in-out;
+
+    .logo {
+      position: absolute;
+      top: 22px;
+      left: 32px;
+    }
+
+    .nav-list {
+      height: 100%;
+      position: absolute;
+      display: none;
+      left: 0;
+      padding: 0;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 35px;
+
+      .nav-item {
+        margin: 30px 5px;
+        transform: scale(0);
+      }
+    }
+
+    .nav-toggle.menu {
+      display: block;
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      transform: scale(1);
+      transition: transform 500ms ease-in;
+    }
+
+    .nav-toggle.cross{
+      display: none;
+    }
+
+    .nav-toggle:hover {
+      transform: scale(1.2);
+    }
+
+    .always-top {
+      position: absolute;
+      top: 25px;
+      margin: 0;
+
+      &.resume {
+        right: 125px;
+      }
+
+      &.theme-toggle {
+        right: 75px;
+        padding: 0;
+      }
+    }
+  }
+}

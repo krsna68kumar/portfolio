@@ -1,0 +1,26 @@
+<nav id='nav'>
+  <title class="logo" (click)="ScrollIntoView('#about')">Sriram</title>
+  <ul class="nav-list">
+    <li class="nav-item" (click)="ScrollIntoView('#about')">About</li>
+    <li class="nav-item" (click)="ScrollIntoView('#experience')">Experience</li>
+    <li class="nav-item" (click)="ScrollIntoView('#work')">Work</li>
+    <li class="nav-item" (click)="ScrollIntoView('#footer')">Contact</li>
+  </ul>
+  <div class="nav-item always-top resume">Resume</div>
+  <div class="nav-item always-top theme-toggle" (click)='isDark = !isDark;setDarkTheme()'>
+    <span class="material-icons-outlined theme-switch" *ngIf='!isDark'>
+      light_mode
+    </span>
+    <span class="material-icons-outlined theme-switch" *ngIf='isDark'>
+      dark_mode
+    </span>
+  </div>
+  <div>
+    <span class="material-icons-outlined nav-toggle menu" (click)='toggle()'>
+      menu
+    </span>
+    <span class="material-icons-outlined nav-toggle cross" (click)='toggle()'>
+      close
+    </span>
+  </div>
+</nav>

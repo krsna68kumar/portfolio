@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+body {
+  font-family: $font-family;
+  font-weight: $font-light;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 0 auto;
+  transition: background 1s ease-in-out, color 1s ease-in-out;
+}
+
+
+
+.light-theme {
+  background: $light-bg;
+  color: $black;
+
+
+  nav {
+    background-color: $light-bg-translucent;
+    color: $black;
+    backdrop-filter: blur(20.0px);
+    -webkit-backdrop-filter: blur(20.0px);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out !important;
+  }
+}
+
+.dark-theme {
+  background: $dark-bg;
+  color: $white;
+
+  nav {
+    background-color: $dark-bg-translucent;
+    color: $white;
+    backdrop-filter: blur(20.0px);
+    -webkit-backdrop-filter: blur(20.0px);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out !important;
+
+  }
+}
