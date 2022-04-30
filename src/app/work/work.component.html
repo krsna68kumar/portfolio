@@ -1,3 +1,13 @@
-<div class="work">
-    work works!
-</div>
+<section class="work">
+  <div class="title-section">My Work</div>
+  <main class="card-section">
+    <div class="card-wrapper" *ngFor="let work of workArray">
+      <div class="card">
+        <div class="card-title">{{work}}</div>
+        <div class="card-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam culpa quisquam accusamus expedita laudantium? Distinctio nobis, beatae voluptas sed consectetur placeat veniam quam accusamus delectus sit eum quasi dolores facere.
+        </div>
+      </div>
+    </div>
+  </main>
+</section>

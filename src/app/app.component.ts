@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portfolio';
+  title:any;
+  ngOnInit(){
+    this.foo();
+    console.log(this.title);
+    // this.boo();
+  }
+
+  foo(){
+    setTimeout(()=>{
+      this.title = 'Aravind oru loosu'
+    },500)
+  }
+
+  boo(){
+    setTimeout(()=>{
+      console.log("3")
+    },500)
+  }
 }

@@ -1,5 +1,89 @@
-.about{
-    height: 100vh;
-    padding: 100px 32px;
-    // background: yellow;
+@import '../../variables.scss';
+
+.about {
+  height: calc(100vh - 75px);
+  padding: 75px 32px 0 32px;
+  display: flex;
+
+  .about-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+
+    .name {
+      font-size: 80px;
+      color: blueviolet;
+    }
+
+    .des {
+      font-size: 22px;
+      max-width: 600px;
+      text-align: justify;
+    }
+
+    .button {
+      width: 150px;
+      height: 50px;
+      margin: 20px 0 50px 0;
+      padding: 15px;
+      border: 2px solid blueviolet;
+      background-color: transparent;
+      border-radius: 15px;
+      color: inherit;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        font-size: $font-size-normal;
+      }
+    }
+
+    .scroll {
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  .avatar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+
+    // img {
+    //   height: 400px;
+    //   width: 400px;
+    // }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about {
+    flex-direction: column;
+
+    .about-desc {
+      order: 2;
+      margin-bottom: 120px;
+
+      .name {
+        font-size: 65px;
+      }
+
+      .des {
+        font-size: 16px;
+      }
+    }
+
+    .avatar {
+      justify-content: center;
+
+      img {
+        height: 250px;
+        width: 250px;
+      }
+    }
+  }
 }

@@ -1,5 +1,60 @@
-.work{
-    height: 100vh;
-    padding: 100px 32px;
-    // background: orchid;
+@import '../../variables.scss';
+
+.work {
+  min-height: calc(100vh - 75px);
+  padding: 85px 0 32px 0;
+  display: flex;
+  flex-direction: column;
+
+  .title-section {
+    font-size: $font-size-heading;
+    padding: 20px 0;
+  }
+
+  .card-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    .card-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 33.3%;
+      height: 310px;
+
+      .card {
+        background-color: blueviolet;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 5px;
+        .card-title{
+          font-size: $font-size-title;
+          font-weight: $font-bold;
+          text-align: center;
+          padding: 15px;
+        }
+        .card-body{
+          text-align: justify;
+          font-size: $font-size-normal;
+          font-weight: $font-light;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:920px) {
+  .work {
+    .card-section .card-wrapper {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (max-width:620px) {
+  .work {
+    .card-section .card-wrapper {
+      width: 100%;
+    }
+  }
 }

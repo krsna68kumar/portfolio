@@ -7,6 +7,11 @@ nav {
   align-items: center;
   padding: 0 32px;
   user-select: none;
+  background-color: white;
+  z-index: 99999;
+  backdrop-filter: blur(20.0px);
+  -webkit-backdrop-filter: blur(20.0px);
+  transition: background-color 1s ease-in-out !important;
 
   .logo {
     display: block;
@@ -29,6 +34,7 @@ nav {
 
   .always-top {
     margin: 10px 20px;
+    cursor: pointer;
 
     &.theme-toggle {
       padding-top: 5px;
@@ -46,7 +52,8 @@ nav {
     }
   }
 
-  .nav-toggle.menu , .nav-toggle.cross {
+  .nav-toggle.menu,
+  .nav-toggle.cross {
     display: none;
   }
 }
@@ -58,18 +65,19 @@ nav.collapsed {
 
   .nav-list {
     display: flex;
-    .nav-item{
+
+    .nav-item {
       transform: scale(1);
       transition: transform 500ms ease-in-out;
       transition-delay: 1s;
     }
   }
 
-  .nav-toggle.menu{
+  .nav-toggle.menu {
     display: none;
   }
 
-  .nav-toggle.cross{
+  .nav-toggle.cross {
     display: block !important;
     position: absolute;
     top: 25px;
@@ -116,7 +124,7 @@ nav.collapsed {
       transition: transform 500ms ease-in;
     }
 
-    .nav-toggle.cross{
+    .nav-toggle.cross {
       display: none;
     }
 
